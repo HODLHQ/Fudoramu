@@ -1,20 +1,22 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-// import Sketch from 'react-p5'
+//import Sketch from 'react-p5'
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
   ssr: false
 })
 
 const Landing = () => {
-  let y = 0
+  y = 0
   let direction = '^'
-
+	
   const setup = (p5, parentRef) => {
-    p5.createCanvas(200, 200).parent(parentRef)
+	//document.body.style.margin = "0px"
+    //p5.createCanvas().parent(parentRef)
+	
   }
 
   const draw = (p5) => {
-    p5.background(0)
+   /* p5.background(0)
     p5.fill(255, y * 1.3, 0)
     p5.ellipse(p5.width / 2, y, 50)
     if (y > p5.height) direction = ''
@@ -22,14 +24,13 @@ const Landing = () => {
       direction = '^'
     }
     if (direction === '^') y += 8
-    else y -= 4
+    else y -= 4*/
   }
 
   return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <h1>react-p5</h1>
-      <Sketch setup={setup} draw={draw} />
-    </div>
+  <div style={{width: '100%', margin:'0', padding:'0'}}>
+   
+	</div>
   )
 }
 
