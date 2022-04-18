@@ -11,22 +11,20 @@ import {
   Button,
   useDisclosure,
   useColorMode,
-  useColorModeValue,
   Stack
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 
-const Links = [{ slug: '/hood', title: 'HOME' }]
+const Links = [{ slug: '/', title: 'HOME' }]
 
 const Bar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { colorMode, toggleColorMode } = useColorMode()
   const { state } = useApp()
   const { isTestnet } = state
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={'gray.900'} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -48,11 +46,6 @@ const Bar = () => {
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
-            <Box m='2'>
-              <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
-            </Box>
             <Web3 />
           </Flex>
         </Flex>

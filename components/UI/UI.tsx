@@ -12,10 +12,13 @@ const UI = ({ children }: { children: ReactNode }) => {
         <meta name='description' content='Fudoramu' />
         <link rel='icon' href='/favicon.gif' type='image/gif' />
       </Head>
-      <Wallet/>
-      <Bar/>
-      <Container maxW='4xl' minHeight={'60vh'} style={{ margin:0, padding: 0}}>
-        {children}
+      {/* <Wallet />
+      <Bar /> */}
+      <Container
+        maxW='4xl'
+        minHeight={'60vh'}
+        style={{ margin: 0, padding: 0 }}>
+        <>{children}</>
       </Container>
     </Box>
   )

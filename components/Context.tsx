@@ -40,7 +40,7 @@ export {
   reset
 }
 
-export const AppProvider = ({ children }: { children: ReactNode }) => {
+export const AppProvider = ({ children }: { children: JSX.Element }) => {
   const [state, dispatch] = useReducer(appReducer, initialAppState)
   const value = useMemo(() => ({ state, dispatch }), [state, dispatch])
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>

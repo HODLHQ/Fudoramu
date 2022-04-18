@@ -1,4 +1,4 @@
-import Blockies from 'react-blockies'
+// import Blockies from 'react-blockies'
 import { Box } from '@chakra-ui/react'
 
 interface BlockieProps {
@@ -10,11 +10,11 @@ interface BlockieProps {
 const Blockie = ({ address, currentWallet, size }: BlockieProps) => {
   return (
     <Box>
-      <Blockies
+      {/* <Blockies
         seed={address ? address.toLowerCase() : ''}
         scale={size ? size : 2}
         className='identicon'
-      />
+      /> */}
     </Box>
   )
 }
