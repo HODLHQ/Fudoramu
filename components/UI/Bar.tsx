@@ -10,10 +10,9 @@ import {
   IconButton,
   Button,
   useDisclosure,
-  useColorMode,
   Stack
 } from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 
 const Links = [{ slug: '/', title: 'HOME' }]
 

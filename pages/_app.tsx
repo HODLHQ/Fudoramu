@@ -1,6 +1,6 @@
 import UI from '@/components/UI/UI'
 import { Box, Container, Heading } from '@chakra-ui/react'
-// import { AppProvider } from '@/components/Context'
+import { AppProvider } from '@/components/Context'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
 
@@ -18,13 +18,13 @@ const MyApp = (props: AppProps) => {
   const { Component, pageProps } = props
   return (
     <ChakraProvider theme={theme}>
-      {/* <AppProvider> */}
-      <Box>
-        <UI>
-          <Component {...pageProps} />
-        </UI>
-      </Box>
-      {/* </AppProvider> */}
+      <AppProvider>
+        <Box>
+          <UI>
+            <Component {...pageProps} />
+          </UI>
+        </Box>
+      </AppProvider>
     </ChakraProvider>
   )
 }

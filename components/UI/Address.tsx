@@ -1,4 +1,3 @@
-import Blockie from '@/components/UI/Blockie'
 import { getEllipsisTxt } from '@/utils/formatters'
 import { Skeleton } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
@@ -46,15 +45,12 @@ const Address = ({ address, ens, avatar, size, copyable }: AddressProps) => {
         height: '36px',
         display: 'flex',
         gap: '5px',
-        // backgroundColor: 'rgba(255, 255, 255, 0.1)',
         borderRadius: '9px',
         alignItems: 'center'
       }}>
-      {avatar === 'left' && <Blockie address={address} size={size} />}
       <p>
         {ens && ens !== '' ? ens : size ? getEllipsisTxt(address, 4) : address}
       </p>
-      {avatar === 'right' && <Blockie address={address} size={size} />}
       {copyable && (isClicked ? <Check /> : <Copy />)}
     </div>
   )

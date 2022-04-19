@@ -12,8 +12,8 @@ const UI = ({ children }: { children: ReactNode }) => {
         <meta name='description' content='Fudoramu' />
         <link rel='icon' href='/favicon.gif' type='image/gif' />
       </Head>
-      {/* <Wallet />
-      <Bar /> */}
+      <Wallet />
+      <Bar />
       <Container
         maxW='4xl'
         minHeight={'60vh'}
