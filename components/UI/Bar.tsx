@@ -37,11 +37,11 @@ const Bar = () => {
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
+              {/* {Links.map((link) => (
                 <NavLink key={link.slug} slug={link.slug}>
                   {link.title}
                 </NavLink>
-              ))}
+              ))} */}
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>

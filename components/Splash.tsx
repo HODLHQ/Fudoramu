@@ -33,10 +33,10 @@ const Splash = () => {
   let sizes: number[] = []
   let rotations: number[] = []
 
-  const preload = (p5: p5Types) => {
-    backgroundI = p5.loadImage(Background.src)
-    char = p5.loadImage(Chara.src)
-    textI = p5.loadImage(Text.src)
+  const preload = async (p5: p5Types) => {
+    backgroundI = await p5.loadImage(Background.src)
+    char = await p5.loadImage(Chara.src)
+    textI = await p5.loadImage(Text.src)
     Faces = [
       p5.loadImage(Face1.src),
       p5.loadImage(Face2.src),
@@ -150,6 +150,17 @@ const Splash = () => {
     p5.image(textI, p5.width / 2 - sizeX / 2, p5.height / 20, sizeX, sizeY)
   }
 
-  return <Sketch setup={setup} preload={preload} draw={draw} />
+  const windowResized = (p5: p5Types) => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight * 0.9)
+  }
+
+  return (
+    <Sketch
+      setup={setup}
+      preload={preload}
+      draw={draw}
+      windowResized={windowResized}
+    />
+  )
 }
 export default Splash
